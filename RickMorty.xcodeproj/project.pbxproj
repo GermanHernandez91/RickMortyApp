@@ -25,6 +25,8 @@
 		7720A67C23DD1F360092F122 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A67B23DD1F360092F122 /* Episode.swift */; };
 		7720A67E23DD1F7F0092F122 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A67D23DD1F7F0092F122 /* Info.swift */; };
 		7720A68023DD26580092F122 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A67F23DD26580092F122 /* PersistenceManager.swift */; };
+		7720A68223DD2DA00092F122 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A68123DD2DA00092F122 /* UIViewController+Ext.swift */; };
+		7720A68623DD2E370092F122 /* RMAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A68523DD2E370092F122 /* RMAlertVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		7720A67B23DD1F360092F122 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		7720A67D23DD1F7F0092F122 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		7720A67F23DD26580092F122 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		7720A68123DD2DA00092F122 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		7720A68523DD2E370092F122 /* RMAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMAlertVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 		7720A64923DD135A0092F122 /* RickMorty */ = {
 			isa = PBXGroup;
 			children = (
+				7720A68323DD2E040092F122 /* CustomViews */,
 				7720A67623DD1F1A0092F122 /* Models */,
 				7720A66F23DD1BAA0092F122 /* Utilities */,
 				7720A66C23DD1AE10092F122 /* Managers */,
@@ -118,6 +123,7 @@
 			children = (
 				7720A66223DD15350092F122 /* SceneDelegate+Ext.swift */,
 				7720A67423DD1CDE0092F122 /* NetworkManager+Ext.swift */,
+				7720A68123DD2DA00092F122 /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -149,6 +155,22 @@
 				7720A67D23DD1F7F0092F122 /* Info.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7720A68323DD2E040092F122 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				7720A68423DD2E120092F122 /* ViewControllers */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		7720A68423DD2E120092F122 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7720A68523DD2E370092F122 /* RMAlertVC.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +245,8 @@
 			files = (
 				7720A66923DD165E0092F122 /* EpisodesVC.swift in Sources */,
 				7720A64B23DD135A0092F122 /* AppDelegate.swift in Sources */,
+				7720A68623DD2E370092F122 /* RMAlertVC.swift in Sources */,
+				7720A68223DD2DA00092F122 /* UIViewController+Ext.swift in Sources */,
 				7720A64D23DD135A0092F122 /* SceneDelegate.swift in Sources */,
 				7720A68023DD26580092F122 /* PersistenceManager.swift in Sources */,
 				7720A67E23DD1F7F0092F122 /* Info.swift in Sources */,
