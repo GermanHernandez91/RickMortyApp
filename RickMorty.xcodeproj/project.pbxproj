@@ -16,6 +16,15 @@
 		7720A66723DD16500092F122 /* LocationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A66623DD16500092F122 /* LocationsVC.swift */; };
 		7720A66923DD165E0092F122 /* EpisodesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A66823DD165E0092F122 /* EpisodesVC.swift */; };
 		7720A66B23DD166D0092F122 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A66A23DD166D0092F122 /* SettingsVC.swift */; };
+		7720A66E23DD1AF60092F122 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A66D23DD1AF60092F122 /* NetworkManager.swift */; };
+		7720A67123DD1BB30092F122 /* RMError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A67023DD1BB30092F122 /* RMError.swift */; };
+		7720A67323DD1BE90092F122 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A67223DD1BE90092F122 /* Constants.swift */; };
+		7720A67523DD1CDE0092F122 /* NetworkManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A67423DD1CDE0092F122 /* NetworkManager+Ext.swift */; };
+		7720A67823DD1F250092F122 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A67723DD1F250092F122 /* Character.swift */; };
+		7720A67A23DD1F2C0092F122 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A67923DD1F2C0092F122 /* Location.swift */; };
+		7720A67C23DD1F360092F122 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A67B23DD1F360092F122 /* Episode.swift */; };
+		7720A67E23DD1F7F0092F122 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A67D23DD1F7F0092F122 /* Info.swift */; };
+		7720A68023DD26580092F122 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A67F23DD26580092F122 /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +39,15 @@
 		7720A66623DD16500092F122 /* LocationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsVC.swift; sourceTree = "<group>"; };
 		7720A66823DD165E0092F122 /* EpisodesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesVC.swift; sourceTree = "<group>"; };
 		7720A66A23DD166D0092F122 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		7720A66D23DD1AF60092F122 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		7720A67023DD1BB30092F122 /* RMError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMError.swift; sourceTree = "<group>"; };
+		7720A67223DD1BE90092F122 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7720A67423DD1CDE0092F122 /* NetworkManager+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Ext.swift"; sourceTree = "<group>"; };
+		7720A67723DD1F250092F122 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		7720A67923DD1F2C0092F122 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		7720A67B23DD1F360092F122 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		7720A67D23DD1F7F0092F122 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		7720A67F23DD26580092F122 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +80,9 @@
 		7720A64923DD135A0092F122 /* RickMorty */ = {
 			isa = PBXGroup;
 			children = (
+				7720A67623DD1F1A0092F122 /* Models */,
+				7720A66F23DD1BAA0092F122 /* Utilities */,
+				7720A66C23DD1AE10092F122 /* Managers */,
 				7720A66123DD15280092F122 /* Extensions */,
 				7720A66023DD14C20092F122 /* Screens */,
 				7720A65F23DD14800092F122 /* Support */,
@@ -96,8 +117,38 @@
 			isa = PBXGroup;
 			children = (
 				7720A66223DD15350092F122 /* SceneDelegate+Ext.swift */,
+				7720A67423DD1CDE0092F122 /* NetworkManager+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7720A66C23DD1AE10092F122 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7720A66D23DD1AF60092F122 /* NetworkManager.swift */,
+				7720A67F23DD26580092F122 /* PersistenceManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		7720A66F23DD1BAA0092F122 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7720A67023DD1BB30092F122 /* RMError.swift */,
+				7720A67223DD1BE90092F122 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		7720A67623DD1F1A0092F122 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7720A67723DD1F250092F122 /* Character.swift */,
+				7720A67923DD1F2C0092F122 /* Location.swift */,
+				7720A67B23DD1F360092F122 /* Episode.swift */,
+				7720A67D23DD1F7F0092F122 /* Info.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,9 +224,18 @@
 				7720A66923DD165E0092F122 /* EpisodesVC.swift in Sources */,
 				7720A64B23DD135A0092F122 /* AppDelegate.swift in Sources */,
 				7720A64D23DD135A0092F122 /* SceneDelegate.swift in Sources */,
+				7720A68023DD26580092F122 /* PersistenceManager.swift in Sources */,
+				7720A67E23DD1F7F0092F122 /* Info.swift in Sources */,
+				7720A67823DD1F250092F122 /* Character.swift in Sources */,
 				7720A66723DD16500092F122 /* LocationsVC.swift in Sources */,
+				7720A66E23DD1AF60092F122 /* NetworkManager.swift in Sources */,
+				7720A67A23DD1F2C0092F122 /* Location.swift in Sources */,
+				7720A67323DD1BE90092F122 /* Constants.swift in Sources */,
 				7720A66523DD16430092F122 /* CharactersVC.swift in Sources */,
+				7720A67C23DD1F360092F122 /* Episode.swift in Sources */,
 				7720A66323DD15350092F122 /* SceneDelegate+Ext.swift in Sources */,
+				7720A67123DD1BB30092F122 /* RMError.swift in Sources */,
+				7720A67523DD1CDE0092F122 /* NetworkManager+Ext.swift in Sources */,
 				7720A66B23DD166D0092F122 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

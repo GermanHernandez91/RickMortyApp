@@ -33,7 +33,7 @@ extension SceneDelegate {
     func createCharactersNC() -> UINavigationController {
         let charactersVC        = CharactersVC()
         charactersVC.title      = "Characters"
-        charactersVC.tabBarItem = UITabBarItem(title: "Characters", image: UIImage(systemName: "person.3.fill"), tag: 0)
+        charactersVC.tabBarItem = UITabBarItem(title: "Characters", image: UIImage(systemName: SFSymbols.characters), tag: 0)
         
         return UINavigationController(rootViewController: charactersVC)
     }
@@ -42,7 +42,7 @@ extension SceneDelegate {
     func createLocationsNC() -> UINavigationController {
         let locationsVC         = LocationsVC()
         locationsVC.title       = "Locations"
-        locationsVC.tabBarItem  = UITabBarItem(title: "Locations", image: UIImage(systemName: "map.fill"), tag: 1)
+        locationsVC.tabBarItem  = UITabBarItem(title: "Locations", image: UIImage(systemName: SFSymbols.locations), tag: 1)
         
         return UINavigationController(rootViewController: locationsVC)
     }
@@ -51,7 +51,7 @@ extension SceneDelegate {
     func createEpisodesNC() -> UINavigationController {
         let episodesVC = EpisodesVC()
         episodesVC.title = "Episodes"
-        episodesVC.tabBarItem = UITabBarItem(title: "Episodes", image: UIImage(systemName: "list.bullet"), tag: 2)
+        episodesVC.tabBarItem = UITabBarItem(title: "Episodes", image: UIImage(systemName: SFSymbols.episodes), tag: 2)
         
         return UINavigationController(rootViewController: episodesVC)
     }
@@ -60,7 +60,7 @@ extension SceneDelegate {
     func createSettingsNC() -> UINavigationController {
         let settingsVC = SettingsVC()
         settingsVC.title = "Settings"
-        settingsVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 3)
+        settingsVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: SFSymbols.settings), tag: 3)
         
         return UINavigationController(rootViewController: settingsVC)
     }
