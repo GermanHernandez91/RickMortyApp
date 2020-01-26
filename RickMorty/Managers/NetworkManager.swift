@@ -18,11 +18,11 @@ class NetworkManager {
     
     // MARK: - Characters
     
-    func getCharacters(page: Int, charactersID: [Int]?, completion: @escaping (Result<[Character], RMError>) -> Void) {
-        var endpoint = baseURL + "character?page=\(page)/"
+    func getCharacters(page: Int, charactersID: [Int]?, completion: @escaping (Result<Characters, RMError>) -> Void) {
+        var endpoint = baseURL + "character/?page=\(page)"
         
         if let charactersID = charactersID {
-            endpoint += "\(charactersID)"
+            endpoint += "/\(charactersID)"
         }
         
         guard let url = URL(string: endpoint) else {
@@ -37,7 +37,7 @@ class NetworkManager {
                     let decoder = JSONDecoder()
                     let response = try decoder.decode(Characters.self, from: data)
                     
-                    completion(.success(response.results))
+                    completion(.success(response))
                 } catch {
                     completion(.failure(.invalidData))
                 }
