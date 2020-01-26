@@ -25,6 +25,15 @@
 		7720A67C23DD1F360092F122 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A67B23DD1F360092F122 /* Episode.swift */; };
 		7720A67E23DD1F7F0092F122 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A67D23DD1F7F0092F122 /* Info.swift */; };
 		7720A68023DD26580092F122 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A67F23DD26580092F122 /* PersistenceManager.swift */; };
+		7720A68223DD2DA00092F122 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A68123DD2DA00092F122 /* UIViewController+Ext.swift */; };
+		7720A68623DD2E370092F122 /* RMAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720A68523DD2E370092F122 /* RMAlertVC.swift */; };
+		77F4790723DE3A0F005383FF /* RMTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4790623DE3A0F005383FF /* RMTitleLabel.swift */; };
+		77F4790923DE3AD5005383FF /* RMSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4790823DE3AD5005383FF /* RMSecondaryTitleLabel.swift */; };
+		77F4790B23DE3B05005383FF /* RMBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4790A23DE3B05005383FF /* RMBodyLabel.swift */; };
+		77F4790D23DE3B86005383FF /* RMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4790C23DE3B86005383FF /* RMButton.swift */; };
+		77F4791023DE40B3005383FF /* RMImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4790F23DE40B3005383FF /* RMImageView.swift */; };
+		77F4791323DE41E2005383FF /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4791223DE41E2005383FF /* CharacterCell.swift */; };
+		77F4791523DE4870005383FF /* CharacterDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4791423DE4870005383FF /* CharacterDetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +57,15 @@
 		7720A67B23DD1F360092F122 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		7720A67D23DD1F7F0092F122 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		7720A67F23DD26580092F122 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		7720A68123DD2DA00092F122 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		7720A68523DD2E370092F122 /* RMAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMAlertVC.swift; sourceTree = "<group>"; };
+		77F4790623DE3A0F005383FF /* RMTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RMTitleLabel.swift; path = RickMorty/CustomViews/Labels/RMTitleLabel.swift; sourceTree = SOURCE_ROOT; };
+		77F4790823DE3AD5005383FF /* RMSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSecondaryTitleLabel.swift; sourceTree = "<group>"; };
+		77F4790A23DE3B05005383FF /* RMBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMBodyLabel.swift; sourceTree = "<group>"; };
+		77F4790C23DE3B86005383FF /* RMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMButton.swift; sourceTree = "<group>"; };
+		77F4790F23DE40B3005383FF /* RMImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMImageView.swift; sourceTree = "<group>"; };
+		77F4791223DE41E2005383FF /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		77F4791423DE4870005383FF /* CharacterDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +98,7 @@
 		7720A64923DD135A0092F122 /* RickMorty */ = {
 			isa = PBXGroup;
 			children = (
+				7720A68323DD2E040092F122 /* CustomViews */,
 				7720A67623DD1F1A0092F122 /* Models */,
 				7720A66F23DD1BAA0092F122 /* Utilities */,
 				7720A66C23DD1AE10092F122 /* Managers */,
@@ -109,6 +128,7 @@
 				7720A66623DD16500092F122 /* LocationsVC.swift */,
 				7720A66823DD165E0092F122 /* EpisodesVC.swift */,
 				7720A66A23DD166D0092F122 /* SettingsVC.swift */,
+				77F4791423DE4870005383FF /* CharacterDetailsVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -118,6 +138,7 @@
 			children = (
 				7720A66223DD15350092F122 /* SceneDelegate+Ext.swift */,
 				7720A67423DD1CDE0092F122 /* NetworkManager+Ext.swift */,
+				7720A68123DD2DA00092F122 /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -149,6 +170,68 @@
 				7720A67D23DD1F7F0092F122 /* Info.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7720A68323DD2E040092F122 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				77F4791123DE41D0005383FF /* Cells */,
+				77F4790E23DE409D005383FF /* Images */,
+				77F4790523DE39EF005383FF /* Views */,
+				77F4790423DE39D4005383FF /* Buttons */,
+				77F4790323DE39C9005383FF /* Labels */,
+				7720A68423DD2E120092F122 /* ViewControllers */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		7720A68423DD2E120092F122 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7720A68523DD2E370092F122 /* RMAlertVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		77F4790323DE39C9005383FF /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				77F4790623DE3A0F005383FF /* RMTitleLabel.swift */,
+				77F4790823DE3AD5005383FF /* RMSecondaryTitleLabel.swift */,
+				77F4790A23DE3B05005383FF /* RMBodyLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		77F4790423DE39D4005383FF /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				77F4790C23DE3B86005383FF /* RMButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		77F4790523DE39EF005383FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		77F4790E23DE409D005383FF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				77F4790F23DE40B3005383FF /* RMImageView.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		77F4791123DE41D0005383FF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				77F4791223DE41E2005383FF /* CharacterCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,20 +305,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				7720A66923DD165E0092F122 /* EpisodesVC.swift in Sources */,
+				77F4791023DE40B3005383FF /* RMImageView.swift in Sources */,
 				7720A64B23DD135A0092F122 /* AppDelegate.swift in Sources */,
+				77F4791323DE41E2005383FF /* CharacterCell.swift in Sources */,
+				7720A68623DD2E370092F122 /* RMAlertVC.swift in Sources */,
+				77F4790923DE3AD5005383FF /* RMSecondaryTitleLabel.swift in Sources */,
+				77F4790B23DE3B05005383FF /* RMBodyLabel.swift in Sources */,
+				7720A68223DD2DA00092F122 /* UIViewController+Ext.swift in Sources */,
 				7720A64D23DD135A0092F122 /* SceneDelegate.swift in Sources */,
 				7720A68023DD26580092F122 /* PersistenceManager.swift in Sources */,
+				77F4790D23DE3B86005383FF /* RMButton.swift in Sources */,
 				7720A67E23DD1F7F0092F122 /* Info.swift in Sources */,
 				7720A67823DD1F250092F122 /* Character.swift in Sources */,
 				7720A66723DD16500092F122 /* LocationsVC.swift in Sources */,
 				7720A66E23DD1AF60092F122 /* NetworkManager.swift in Sources */,
 				7720A67A23DD1F2C0092F122 /* Location.swift in Sources */,
+				77F4791523DE4870005383FF /* CharacterDetailsVC.swift in Sources */,
 				7720A67323DD1BE90092F122 /* Constants.swift in Sources */,
 				7720A66523DD16430092F122 /* CharactersVC.swift in Sources */,
 				7720A67C23DD1F360092F122 /* Episode.swift in Sources */,
 				7720A66323DD15350092F122 /* SceneDelegate+Ext.swift in Sources */,
 				7720A67123DD1BB30092F122 /* RMError.swift in Sources */,
 				7720A67523DD1CDE0092F122 /* NetworkManager+Ext.swift in Sources */,
+				77F4790723DE3A0F005383FF /* RMTitleLabel.swift in Sources */,
 				7720A66B23DD166D0092F122 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

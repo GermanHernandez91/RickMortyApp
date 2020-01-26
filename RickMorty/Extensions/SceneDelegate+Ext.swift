@@ -20,13 +20,12 @@ extension SceneDelegate {
     
     
     func configurationBar() {
-        UINavigationBar.appearance().tintColor          = .systemIndigo
-        UINavigationBar.appearance().backgroundColor    = .systemBackground
+        UINavigationBar.appearance().tintColor = .systemRed
     }
     
     
     func configurationTabBar() {
-        UITabBar.appearance().tintColor = .systemIndigo
+        UITabBar.appearance().tintColor = .systemRed
     }
     
     

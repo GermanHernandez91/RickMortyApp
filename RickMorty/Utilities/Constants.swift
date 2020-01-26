@@ -13,4 +13,6 @@ enum SFSymbols {
     static let locations    = "map.fill"
     static let episodes     = "list.bullet"
     static let settings     = "gear"
+    static let favorites    = "star.fill"
+    static let favorite     = "heart.fill"
 }
