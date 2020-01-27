@@ -12,7 +12,7 @@ class CharacterCell: UITableViewCell {
 
     static let reuseID  = "CharacterCell"
     let avatarImage     = RMImageView(frame: .zero)
-    let nameLabel       = RMTitleLabel(textAlignment: .left, fontSize: 26)
+    let nameLabel       = RMTitleLabel(textAlignment: .left, fontSize: 20)
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

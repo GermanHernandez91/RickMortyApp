@@ -82,7 +82,7 @@ class CharactersVC: UIViewController {
             case .success(let characters):
                 if !characters.info.next.isEmpty { self.hasMoreData = true }
                 self.filteredCharacters.append(contentsOf: characters.results)
-                self.characters = characters.results
+                self.characters = self.filteredCharacters
                 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
