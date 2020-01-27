@@ -107,8 +107,32 @@ class NetworkManager {
     
     
     func getLocation(for locationID: Int, completion: @escaping (Result<Location, RMError>) -> Void) {
-        let endpoint = baseURL + "character/\(locationID)"
+        let endpoint = baseURL + "location/\(locationID)"
         
+        guard let url = URL(string: endpoint) else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        performTask(with: url) { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let decoder = JSONDecoder()
+                    let location = try decoder.decode(Location.self, from: data)
+                    
+                    completion(.success(location))
+                } catch {
+                    completion(.failure(.invalidData))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    
+    func getLocationByURL(endpoint: String, completion: @escaping (Result<Location, RMError>) -> Void) {
         guard let url = URL(string: endpoint) else {
             completion(.failure(.invalidURL))
             return

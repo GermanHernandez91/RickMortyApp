@@ -15,6 +15,7 @@ class LocationsVC: UIViewController {
     var tableView: UITableView!
     var page: Int = 1
     var hasMoreData: Bool = false
+    var isSearching: Bool = false
     
 
     override func viewDidLoad() {
@@ -85,7 +86,19 @@ class LocationsVC: UIViewController {
 extension LocationsVC: UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
+        guard let filter    = searchController.searchBar.text, !filter.isEmpty else { return }
+        isSearching         = true
+        filteredLocations   = locations.filter { $0.name.lowercased().contains(filter.lowercased()) }
         
+        tableView.reloadData()
+    }
+    
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isSearching         = false
+        filteredLocations   = locations
+        
+        tableView.reloadData()
     }
     
 }
@@ -102,10 +115,33 @@ extension LocationsVC: UITableViewDelegate, UITableViewDataSource {
         let location    = filteredLocations[indexPath.row]
         
         cell.textLabel?.text        = location.name
-        cell.detailTextLabel?.text  = location.name
+        cell.detailTextLabel?.text  = location.type
         cell.accessoryType          = .disclosureIndicator
         
         return cell
+    }
+    
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY         = scrollView.contentOffset.y
+        let contentHeight   = scrollView.contentSize.height
+        let height          = scrollView.frame.size.height
+        
+        if offsetY > contentHeight - height && !isSearching {
+            guard hasMoreData else { return }
+            page += 1
+            getLocations(page: page)
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let destVC      = LocationDetailsVC()
+        let location    = filteredLocations[indexPath.row]
+        
+        destVC.locationID = location.id
+        
+        navigationController?.pushViewController(destVC, animated: true)
     }
     
 }
