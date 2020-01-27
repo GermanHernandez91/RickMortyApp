@@ -175,10 +175,26 @@ class CharacterDetailsVC: UIViewController {
 extension CharacterDetailsVC: CharacterDetailsVCDelegate {
     
     func didTapLocation(for character: Character) {
-        let destVC = LocationDetailsVC()
-        destVC.locationName = character.location.name
+        showLoadingView()
         
-        navigationController?.pushViewController(destVC, animated: true)
+        let destVC = LocationDetailsVC()
+        
+        NetworkManager.shared.getLocationByURL(endpoint: character.location.url) { [weak self] result in
+            guard let self = self else { return }
+            
+            self.dismissLoadingView()
+            
+            switch result {
+            case .success(let location):
+                DispatchQueue.main.async {
+                    destVC.locationID = location.id
+                    self.navigationController?.pushViewController(destVC, animated: true)
+                }
+                
+            case .failure(let error):
+                self.presentRMAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "Dismiss")
+            }
+        }
     }
     
     

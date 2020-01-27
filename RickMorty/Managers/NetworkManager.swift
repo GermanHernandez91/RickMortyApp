@@ -76,11 +76,11 @@ class NetworkManager {
     
     // MARK: - Locations
     
-    func getLocations(page: Int, locationsID: [Int]?,  completion: @escaping (Result<[Location], RMError>) -> Void) {
-        var endpoint = baseURL + "location?page=\(page)/"
+    func getLocations(page: Int, locationsID: [Int]?,  completion: @escaping (Result<Locations, RMError>) -> Void) {
+        var endpoint = baseURL + "location/?page=\(page)"
         
         if let locationsID = locationsID {
-            endpoint += "\(locationsID)"
+            endpoint += "/\(locationsID)"
         }
         
         guard let url = URL(string: endpoint) else {
@@ -95,7 +95,7 @@ class NetworkManager {
                     let decoder = JSONDecoder()
                     let response = try decoder.decode(Locations.self, from: data)
                     
-                    completion(.success(response.results))
+                    completion(.success(response))
                 } catch {
                     completion(.failure(.invalidData))
                 }
@@ -107,8 +107,32 @@ class NetworkManager {
     
     
     func getLocation(for locationID: Int, completion: @escaping (Result<Location, RMError>) -> Void) {
-        let endpoint = baseURL + "character/\(locationID)"
+        let endpoint = baseURL + "location/\(locationID)"
         
+        guard let url = URL(string: endpoint) else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        performTask(with: url) { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let decoder = JSONDecoder()
+                    let location = try decoder.decode(Location.self, from: data)
+                    
+                    completion(.success(location))
+                } catch {
+                    completion(.failure(.invalidData))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    
+    func getLocationByURL(endpoint: String, completion: @escaping (Result<Location, RMError>) -> Void) {
         guard let url = URL(string: endpoint) else {
             completion(.failure(.invalidURL))
             return
