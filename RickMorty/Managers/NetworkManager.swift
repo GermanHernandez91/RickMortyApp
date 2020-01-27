@@ -76,11 +76,11 @@ class NetworkManager {
     
     // MARK: - Locations
     
-    func getLocations(page: Int, locationsID: [Int]?,  completion: @escaping (Result<[Location], RMError>) -> Void) {
-        var endpoint = baseURL + "location?page=\(page)/"
+    func getLocations(page: Int, locationsID: [Int]?,  completion: @escaping (Result<Locations, RMError>) -> Void) {
+        var endpoint = baseURL + "location/?page=\(page)"
         
         if let locationsID = locationsID {
-            endpoint += "\(locationsID)"
+            endpoint += "/\(locationsID)"
         }
         
         guard let url = URL(string: endpoint) else {
@@ -95,7 +95,7 @@ class NetworkManager {
                     let decoder = JSONDecoder()
                     let response = try decoder.decode(Locations.self, from: data)
                     
-                    completion(.success(response.results))
+                    completion(.success(response))
                 } catch {
                     completion(.failure(.invalidData))
                 }
