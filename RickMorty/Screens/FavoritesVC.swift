@@ -18,7 +18,6 @@ class FavoritesVC: UIViewController {
         super.viewDidLoad()
 
         configureViewController()
-        configureTableView()
         getFavorites()
     }
     
@@ -61,6 +60,7 @@ class FavoritesVC: UIViewController {
                 if favorites.isEmpty {
                     self.presentEmptyState(with: "Start adding characters to your favorite list", in: self.view)
                 } else {
+                    self.configureTableView()
                     self.tableView.reloadData()
                 }
                 
