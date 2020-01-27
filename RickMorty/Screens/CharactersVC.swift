@@ -56,7 +56,10 @@ class CharactersVC: UIViewController {
     }
     
     
-    @objc func onRightButtonPressed() {}
+    @objc func onRightButtonPressed() {
+        let destVC = FavoritesVC()
+        navigationController?.pushViewController(destVC, animated: true)
+    }
     
     
     func configureSearchController() {
@@ -138,9 +141,11 @@ extension CharactersVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let character           = filteredCharacters[indexPath.row]
         let destVC              = CharacterDetailsVC()
-        destVC.characterName    = character.name
+        destVC.characterID      = character.id
         
-        navigationController?.pushViewController(destVC, animated: true)
+        let navigationController = UINavigationController(rootViewController: destVC)
+        
+        present(navigationController, animated: true)
     }
     
     

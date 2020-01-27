@@ -15,4 +15,5 @@ enum SFSymbols {
     static let settings     = "gear"
     static let favorites    = "star.fill"
     static let favorite     = "heart.fill"
+    static let unfavorited  = "heart"
 }
