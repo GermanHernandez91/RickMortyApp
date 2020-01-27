@@ -30,6 +30,7 @@ class RMCharacterInfoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBackgroundView()
+        configureActionButton()
         layoutUI()
     }
 

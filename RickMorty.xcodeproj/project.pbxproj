@@ -41,6 +41,7 @@
 		77F4792223DEF3F1005383FF /* LocationDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4792123DEF3F1005383FF /* LocationDetailsVC.swift */; };
 		77F4792423DEF538005383FF /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4792323DEF538005383FF /* FavoritesVC.swift */; };
 		77F4792623DEF55E005383FF /* RMEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4792523DEF55E005383FF /* RMEmptyView.swift */; };
+		77F4792823DF06E3005383FF /* CharacterEpisodesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4792723DF06E3005383FF /* CharacterEpisodesVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		77F4792123DEF3F1005383FF /* LocationDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsVC.swift; sourceTree = "<group>"; };
 		77F4792323DEF538005383FF /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		77F4792523DEF55E005383FF /* RMEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEmptyView.swift; sourceTree = "<group>"; };
+		77F4792723DF06E3005383FF /* CharacterEpisodesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEpisodesVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				77F4791423DE4870005383FF /* CharacterDetailsVC.swift */,
 				77F4792123DEF3F1005383FF /* LocationDetailsVC.swift */,
 				77F4792323DEF538005383FF /* FavoritesVC.swift */,
+				77F4792723DF06E3005383FF /* CharacterEpisodesVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				7720A68223DD2DA00092F122 /* UIViewController+Ext.swift in Sources */,
 				7720A64D23DD135A0092F122 /* SceneDelegate.swift in Sources */,
 				7720A68023DD26580092F122 /* PersistenceManager.swift in Sources */,
+				77F4792823DF06E3005383FF /* CharacterEpisodesVC.swift in Sources */,
 				77F4791C23DEE7D8005383FF /* RMLocationInfoVC.swift in Sources */,
 				77F4792423DEF538005383FF /* FavoritesVC.swift in Sources */,
 				77F4790D23DE3B86005383FF /* RMButton.swift in Sources */,

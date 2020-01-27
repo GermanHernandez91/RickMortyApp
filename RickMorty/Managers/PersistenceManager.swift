@@ -49,6 +49,29 @@ enum PersistenceManager {
     }
     
     
+    static func isFavorited(characterID: Int, completion: @escaping (Result<Bool, RMError>) -> Void) {
+        guard let favoritesData = defaults.object(forKey: Keys.favorites) as? Data else {
+            completion(.success(false))
+            return
+        }
+        
+        do {
+            let decoder = JSONDecoder()
+            let characters = try decoder.decode([Character].self, from: favoritesData)
+            
+            let character = characters.filter() { $0.id == characterID }
+            
+            if !character.isEmpty {
+                completion(.success(true))
+            } else {
+                completion(.success(false))
+            }
+        } catch {
+            completion(.failure(.unableToComplete))
+        }
+    }
+    
+    
     static func retrieveFavorites(completion: @escaping (Result<[Character], RMError>) -> Void) {
         guard let favoritesData = defaults.object(forKey: Keys.favorites) as? Data else {
             completion(.success([]))

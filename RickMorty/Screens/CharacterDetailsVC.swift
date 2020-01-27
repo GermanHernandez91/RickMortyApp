@@ -30,6 +30,7 @@ class CharacterDetailsVC: UIViewController {
         configureViewController()
         layoutUI()
         getCharacterInfo()
+        isCharacterFavorited()
     }
     
     
@@ -40,12 +41,29 @@ class CharacterDetailsVC: UIViewController {
         view.backgroundColor    = .systemBackground
         
         let leftButton  = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
-        let rightButton = UIBarButtonItem(image: UIImage(systemName: SFSymbols.favorite), style: .plain, target: self, action: #selector(onRightButtonPressed))
-        
-        navigationItem.rightBarButtonItem = rightButton
         navigationItem.leftBarButtonItem  = leftButton
         
         navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
+    
+    func isCharacterFavorited() {
+        PersistenceManager.isFavorited(characterID: characterID) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let isFavorited):
+                DispatchQueue.main.async {
+                    let rightIcon = isFavorited ? SFSymbols.favorite : SFSymbols.unfavorited
+                    
+                    let rightButton = UIBarButtonItem(image: UIImage(systemName: rightIcon), style: .plain, target: self, action: #selector(self.onRightButtonPressed))
+                           
+                    self.navigationItem.rightBarButtonItem = rightButton
+                }
+            case .failure(let error):
+                self.presentRMAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "Dismiss")
+            }
+        }
     }
     
     
@@ -63,6 +81,7 @@ class CharacterDetailsVC: UIViewController {
                     guard let self = self else { return }
                     
                     guard let error = error else {
+                        self.isCharacterFavorited()
                         self.presentRMAlert(title: "Success", message: "You have successfully favorited this character.", buttonTitle: "Ok")
                         return
                     }
@@ -156,12 +175,18 @@ class CharacterDetailsVC: UIViewController {
 extension CharacterDetailsVC: CharacterDetailsVCDelegate {
     
     func didTapLocation(for character: Character) {
+        let destVC = LocationDetailsVC()
+        destVC.locationName = character.location.name
         
+        navigationController?.pushViewController(destVC, animated: true)
     }
     
     
     func didTapEpisodes(for character: Character) {
+        let destVC = CharacterEpisodesVC()
+        destVC.episodes = character.episode
         
+        navigationController?.pushViewController(destVC, animated: true)
     }
     
 }
