@@ -18,12 +18,15 @@ class NetworkManager {
     
     // MARK: - Characters
     
-    func getCharacters(page: Int, charactersID: [Int]?, completion: @escaping (Result<Characters, RMError>) -> Void) {
+    func getCharacters(page: Int, charactersID: [Int], completion: @escaping (Result<Characters, RMError>) -> Void) {
         var endpoint = baseURL + "character/?page=\(page)"
         
-        if let charactersID = charactersID {
-            endpoint += "/\(charactersID)"
+        if !charactersID.isEmpty {
+            print(charactersID)
+            endpoint = baseURL + "/character/\(charactersID)"
         }
+        
+        print(endpoint)
         
         guard let url = URL(string: endpoint) else {
             completion(.failure(.invalidURL))
