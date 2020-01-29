@@ -8,6 +8,10 @@
 
 import UIKit
 
+enum CharacterScreenType {
+    case main, secondary
+}
+
 class CharactersVC: UIViewController {
     
     // MARK: - Properties
@@ -15,9 +19,12 @@ class CharactersVC: UIViewController {
     var tableView: UITableView!
     var characters: [Character]         = []
     var filteredCharacters: [Character] = []
+    var charactersID: [Int]             = []
     var isSearching                     = false
     var page: Int                       = 1
     var hasMoreData: Bool               = false
+    var screenType: CharacterScreenType = .main
+    var pageTitle: String               = "Characters"
     
     
     // MARK: - Overrides
@@ -29,6 +36,23 @@ class CharactersVC: UIViewController {
         configureSearchController()
         getCharacters(page: page)
         configureTableView()
+    }
+    
+    
+    init(screenType: CharacterScreenType, title: String, charactersID: [Int]?) {
+        super.init(nibName: nil, bundle: nil)
+        
+        self.screenType = screenType
+        self.pageTitle = title
+        
+        if let charactersID = charactersID {
+            self.charactersID = charactersID
+        }
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     
@@ -48,11 +72,14 @@ class CharactersVC: UIViewController {
     
 
     func configureViewController() {
+        title = pageTitle
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        let rightButton = UIBarButtonItem(image: UIImage(systemName: SFSymbols.favorites), style: .plain, target: self, action: #selector(onRightButtonPressed))
-        navigationItem.rightBarButtonItem = rightButton
+        if screenType == .main {
+            let rightButton = UIBarButtonItem(image: UIImage(systemName: SFSymbols.favorites), style: .plain, target: self, action: #selector(onRightButtonPressed))
+                   navigationItem.rightBarButtonItem = rightButton
+        }
     }
     
     
@@ -76,7 +103,7 @@ class CharactersVC: UIViewController {
     func getCharacters(page: Int) {
         showLoadingView()
         
-        NetworkManager.shared.getCharacters(page: page, charactersID: nil) { [weak self] result in
+        NetworkManager.shared.getCharacters(page: page, charactersID: charactersID) { [weak self] result in
             guard let self = self else { return }
             
             self.dismissLoadingView()

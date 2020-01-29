@@ -106,7 +106,8 @@ class LocationDetailsVC: UIViewController {
 extension LocationDetailsVC: LocationDetailsVCDelegate {
     
     func didTapResidents(for location: Location) {
-        
+        let destVC = CharactersVC(screenType: .secondary, title: "Residents", charactersID: location.getResidentsID())
+        navigationController?.pushViewController(destVC, animated: true)
     }
     
 }

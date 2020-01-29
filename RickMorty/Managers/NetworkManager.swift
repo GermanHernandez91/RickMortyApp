@@ -18,11 +18,17 @@ class NetworkManager {
     
     // MARK: - Characters
     
-    func getCharacters(page: Int, charactersID: [Int]?, completion: @escaping (Result<Characters, RMError>) -> Void) {
+    func getCharacters(page: Int, charactersID: [Int], completion: @escaping (Result<Characters, RMError>) -> Void) {
         var endpoint = baseURL + "character/?page=\(page)"
         
-        if let charactersID = charactersID {
-            endpoint += "/\(charactersID)"
+        if !charactersID.isEmpty {
+            var characterArray: [String] = []
+            
+            for character in charactersID {
+                characterArray.append(String(character))
+            }
+            
+            endpoint = baseURL + "character/\(characterArray.joined(separator: ","))"
         }
         
         guard let url = URL(string: endpoint) else {
@@ -35,9 +41,18 @@ class NetworkManager {
             case .success(let data):
                 do {
                     let decoder = JSONDecoder()
-                    let response = try decoder.decode(Characters.self, from: data)
-                    
-                    completion(.success(response))
+      
+                    if !charactersID.isEmpty {
+                        let response = try decoder.decode([Character].self, from: data)
+                        
+                        let info = Info.init(count: response.count, pages: 1, next: "", prev: "")
+                        let characters = Characters.init(info: info, results: response)
+                        
+                        completion(.success(characters))
+                    } else {
+                        let response = try decoder.decode(Characters.self, from: data)
+                        completion(.success(response))
+                    }
                 } catch {
                     completion(.failure(.invalidData))
                 }

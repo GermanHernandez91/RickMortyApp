@@ -30,7 +30,7 @@ extension SceneDelegate {
     
     
     func createCharactersNC() -> UINavigationController {
-        let charactersVC        = CharactersVC()
+        let charactersVC        = CharactersVC(screenType: .main, title: "Characters", charactersID: nil)
         charactersVC.title      = "Characters"
         charactersVC.tabBarItem = UITabBarItem(title: "Characters", image: UIImage(systemName: SFSymbols.characters), tag: 0)
         

@@ -19,4 +19,16 @@ struct Location: Codable {
     let residents: [String]
     let url: String
     let created: String
+    
+    
+    func getResidentsID() -> [Int] {
+        var residentsID: Set<Int> = []
+        
+        for resident in self.residents {
+            let id = resident.compactMap { $0.wholeNumberValue }
+            residentsID.insert(id[0])
+        }
+        
+        return Array(residentsID)
+    }
 }
