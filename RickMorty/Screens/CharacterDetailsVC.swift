@@ -199,9 +199,7 @@ extension CharacterDetailsVC: CharacterDetailsVCDelegate {
     
     
     func didTapEpisodes(for character: Character) {
-        let destVC = CharacterEpisodesVC()
-        destVC.episodes = character.episode
-        
+        let destVC = EpisodesVC(screenType: .secondary, title: "Episodes", episodesID: character.getEpisodesID())
         navigationController?.pushViewController(destVC, animated: true)
     }
     

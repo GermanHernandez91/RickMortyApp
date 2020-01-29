@@ -48,7 +48,7 @@ extension SceneDelegate {
     
     
     func createEpisodesNC() -> UINavigationController {
-        let episodesVC = EpisodesVC()
+        let episodesVC = EpisodesVC(screenType: .main, title: "Episodes", episodesID: nil)
         episodesVC.title = "Episodes"
         episodesVC.tabBarItem = UITabBarItem(title: "Episodes", image: UIImage(systemName: SFSymbols.episodes), tag: 2)
         

@@ -22,6 +22,17 @@ struct Character: Codable {
     let episode: [String]
     let url: String
     let created: String
+    
+    func getEpisodesID() -> [Int] {
+        var episodesID: Set<Int> = []
+        
+        for episode in self.episode {
+            let id = episode.compactMap { $0.wholeNumberValue }
+            episodesID.insert(id[0])
+        }
+        
+        return Array(episodesID)
+    }
 }
 
 struct CharacterLocation: Codable {

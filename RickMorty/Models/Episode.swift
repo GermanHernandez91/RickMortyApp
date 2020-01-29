@@ -25,4 +25,15 @@ struct Episode: Codable {
         case airDate = "air_date"
         case episode, characters, url, created
     }
+    
+    func getCharactersID() -> [Int] {
+        var charactersID: Set<Int> = []
+        
+        for character in self.characters {
+            let id = character.compactMap { $0.wholeNumberValue }
+            charactersID.insert(id[0])
+        }
+        
+        return Array(charactersID)
+    }
 }

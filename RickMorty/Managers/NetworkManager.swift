@@ -173,11 +173,17 @@ class NetworkManager {
     
     // MARK: - Episodes
     
-    func getEpisodes(page: Int, episodesID: [Int]?, completion: @escaping (Result<[Episode], RMError>) -> Void) {
+    func getEpisodes(page: Int, episodesID: [Int], completion: @escaping (Result<Episodes, RMError>) -> Void) {
         var endpoint = baseURL + "episode?page=\(page)/"
            
-        if let episodesID = episodesID {
-           endpoint += "\(episodesID)"
+        if !episodesID.isEmpty {
+            var episodesArray: [String] = []
+            
+            for episode in episodesID {
+                episodesArray.append(String(episode))
+            }
+            
+            endpoint = baseURL + "episode/\(episodesArray.joined(separator: ","))"
         }
 
         guard let url = URL(string: endpoint) else {
@@ -189,11 +195,21 @@ class NetworkManager {
            switch result {
            case .success(let data):
                do {
-                   let decoder = JSONDecoder()
-                   let response = try decoder.decode(Episodes.self, from: data)
-                   
-                   completion(.success(response.results))
+                    let decoder = JSONDecoder()
+                    
+                    if !episodesID.isEmpty {
+                        let response = try decoder.decode([Episode].self, from: data)
+
+                        let info = Info.init(count: response.count, pages: 1, next: "", prev: "")
+                        let episodes = Episodes.init(info: info, results: response)
+
+                        completion(.success(episodes))
+                    } else {
+                        let response = try decoder.decode(Episodes.self, from: data)
+                        completion(.success(response))
+                    }
                } catch {
+                    print(error)
                    completion(.failure(.invalidData))
                }
            case .failure(let error):
