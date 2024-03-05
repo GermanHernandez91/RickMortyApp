@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "12EAD0F5-0EA4-4EF0-8BEF-79AC94599FD8",
+      "name" : "Test Scheme Action",
+      "options" : {
+        "uiTestingScreenshotsLifetime" : "keepNever"
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:RickMortyCollection.xcodeproj",
+      "identifier" : "4752D7802B95F46300FE9C81",
+      "name" : "RickMortyCollection"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:RickMortyCollection.xcodeproj",
+        "identifier" : "4752D7922B95F46500FE9C81",
+        "name" : "RickMortyCollectionTests"
+      }
+    }
+  ],
+  "version" : 1
+}

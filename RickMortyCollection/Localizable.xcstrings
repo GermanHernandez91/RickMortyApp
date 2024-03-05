@@ -1,0 +1,66 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "-" : {
+
+    },
+    "Additional Information" : {
+
+    },
+    "Characters" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personajes"
+          }
+        }
+      }
+    },
+    "Episodes" : {
+
+    },
+    "Genre: %@" : {
+
+    },
+    "Location: %@" : {
+
+    },
+    "No Results Found" : {
+
+    },
+    "OK" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
+    "Origin: %@" : {
+
+    },
+    "RickMortyCollection" : {
+
+    },
+    "Search character by name" : {
+
+    },
+    "Something went wrong" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algo ha salido mal"
+          }
+        }
+      }
+    },
+    "View all" : {
+
+    }
+  },
+  "version" : "1.0"
+}

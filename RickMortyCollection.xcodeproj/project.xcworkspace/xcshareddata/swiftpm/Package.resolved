@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "networkclient",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/GermanHernandez91/NetworkClient.git",
+      "state" : {
+        "revision" : "a4dce6b84594662c6ab5e4ef6840e4d7d4880466",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}
